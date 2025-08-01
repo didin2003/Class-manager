@@ -1,4 +1,4 @@
-#!/home/devops/classmanager-student-teacher-portal/classmanager/venv/bin/python3
+#!/home/ubuntu/Class-manager/venv/bin/python3
 
 import sys
 from os import path
