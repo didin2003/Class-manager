@@ -12,6 +12,15 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
+hosts = os.environ.get("EXTRA_ALLOWED_HOSTS", "")
+ALLOWED_HOSTS = [h.strip() for h in hosts.split(",") if h.strip()]
+
+pod_ip = os.environ.get("POD_IP")
+if pod_ip:
+    ALLOWED_HOSTS.append(pod_ip)
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,"template")
