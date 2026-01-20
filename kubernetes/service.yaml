@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: class-service
 spec:
-  type: LoadBalancer
   selector:
     app: class-manager
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8000
+  type: ClusterIP
